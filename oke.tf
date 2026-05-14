@@ -26,7 +26,7 @@ resource "oci_containerengine_cluster" "oke_cluster" {
   freeform_tags = {
     "OKEclusterName" = var.cluster_name
   }
-  kubernetes_version = "v1.34.1"
+  kubernetes_version = "v1.35.2"
   name               = var.cluster_name
   options {
     admission_controller_options {
@@ -54,10 +54,10 @@ resource "oci_containerengine_node_pool" "oke_node_pool" {
   compartment_id     = var.compartment_id
   cluster_id         = oci_containerengine_cluster.oke_cluster.id
   name               = var.node_pool_name
-  kubernetes_version = "v1.34.1"
+  kubernetes_version = "v1.35.2"
   node_shape         = "VM.Standard.A1.Flex"
   node_shape_config {
-    memory_in_gbs = 8
+    memory_in_gbs = 6
     ocpus         = 1
   }
   node_source_details {
