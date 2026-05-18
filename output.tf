@@ -6,10 +6,6 @@ output "node_pool_id" {
   value = oci_containerengine_node_pool.oke_node_pool.id
 }
 
-output "oke_image_id" {
-  value = data.oci_core_images.oke_images.images[0].id
-}
-
 output "vcn_id" {
   value = oci_core_vcn.oke_vcn.id
 }
